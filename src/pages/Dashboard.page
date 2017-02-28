@@ -1,0 +1,26 @@
+<apex:page Controller="chartController">
+    <apex:includeScript value="/lightning/lightning.out.js"/>
+     <apex:includeLightning />
+
+     Test DashBoard
+     <div id="divWrapper" style="width: 50%; height: 50%">
+        <div id="heresWhereDivGoes"/>
+     </div>
+
+
+    <script type="text/javascript">
+
+      $Lightning.use("c:DataVisualizer3", function() {  /////this is the name of the lightning app///////
+      ////////////// create the component here like ReactJS ////////////////////////
+      $Lightning.createComponent(
+           "c:DataComp4",    ////////this is the name of the lightning component/////
+                {},
+                "heresWhereDivGoes",
+                function(cmp) {
+                    console.log("Component created!");
+                    console.log(cmp);
+                });
+          });
+    </script>
+
+</apex:page>
